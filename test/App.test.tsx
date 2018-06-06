@@ -1,9 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import App from '../src/App';
 
-it('renders without crashing', () => {
+it('renders App without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+test("<APP> Snapshot", () => {
+  expect(<App />).toMatchSnapshot();
+})
